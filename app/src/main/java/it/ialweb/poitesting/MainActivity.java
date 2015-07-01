@@ -56,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
         noData = findViewById(R.id.no_data);
         totalCount = (TextView) findViewById(R.id.total_count);
 
+        findViewById(R.id.retry).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                loadData();
+            }
+        });
+        body.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                loadData();
+            }
+        });
+
         fragment = DownloaderFragment.getOrCreateFragment(getSupportFragmentManager(), "stationLoader");
 
         if (fragment.isTaskRunning()) {
