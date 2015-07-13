@@ -1,14 +1,22 @@
 package it.ialweb.poitesting;
 
-import java.util.ArrayList;
-
 import com.google.gson.annotations.SerializedName;
 
-public class StationList {
-	@SerializedName("results")
-	private ArrayList<Station> list;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-	public ArrayList<Station> getList() {
-		return list;
-	}
+public class StationList {
+    @SerializedName("results")
+    private ArrayList<Station> list = new ArrayList<>();
+
+    public StationList() {
+    }
+
+    public StationList(Station... stations) {
+        list = new ArrayList<>(Arrays.asList(stations));
+    }
+
+    public ArrayList<Station> getList() {
+        return list;
+    }
 }

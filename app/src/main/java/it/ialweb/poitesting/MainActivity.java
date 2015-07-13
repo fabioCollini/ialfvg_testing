@@ -85,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        fragment.detach();
+    }
+
     private void loadData() {
         loadingLayout.setVisibility(View.VISIBLE);
         errorLayout.setVisibility(View.GONE);
